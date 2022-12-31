@@ -1,5 +1,5 @@
 # priceofacar
-GitHub Repository for work done on Professional Certificate in Machine Learning and Artificial Intelligence - November 2022
+GitHub Repository for work done on Professional Certificate in Machine Learning and Artificial Intelligence - December 2022
 
 # Practical Application Assignment 11.1: What Drives the Price of a Car?
 
@@ -17,7 +17,7 @@ GitHub Repository for work done on Professional Certificate in Machine Learning 
  
 ## Introduction
 
-This repository contains the Jupyter Notebook for the Application Assignment 11.1. This takes a sample jupyter notebook to complete the exercise to analyse data in [coupons.csv](https://github.com/yemifalokun/mlrepowork/blob/main/data/coupons.csv) file in the data folder of this repository to determine the features that indicate whether a Driver will accept coupons “right away” or “later before the coupon expires”.
+This repository contains the Jupyter Notebook for the Application Assignment 11.1. This takes a sample jupyter notebook to complete the exercise to analyse data in [vehicles.csv](https://github.com/yemifalokun/priceofacar/blob/main/data/vehicles.csv) file in the data folder of this repository to determine the vehicles features like Fuel, Condition, Size, Type, Color etc. can be used to determine used car prices for the Car Dealership and Sales Team.
 
 ## How to use the files in this repository?
 
