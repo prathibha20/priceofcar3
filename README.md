@@ -17,21 +17,21 @@ GitHub Repository for work done on Professional Certificate in Machine Learning 
  
 ## Introduction
 
-This repository contains the Jupyter Notebook for the Application Assignment 11.1. This takes a sample jupyter notebook to complete the exercise to analyse Kaggle used car data in [vehicles.csv](https://github.com/yemifalokun/priceofacar/blob/main/data/vehicles.csv) file in the data folder of this repository to determine the vehicles features like Fuel, Condition, Size, Type, Color etc. can be used to determine used car prices for the Car Dealership and Sales Team.
+This repository contains the Jupyter Notebook for the Application Assignment 11.1. This takes a sample jupyter notebook to complete the exercise to analyse Kaggle used car data in [vehicles.csv](https://github.com/yemifalokun/priceofacar/blob/main/data/vehicles.csv) file in the data folder of this repository to build a machine learning application that evaluates if vehicles features like Fuel, Condition, Size, Type, Color etc. can be used to determine used car prices for the Car Dealership and Sales Team. This evaluation will help the Car Dealership with fine tuning their inventory by stocking cars that consumers are interested in.
 
 ## How to use the files in this repository?
 
 The notebooks are grouped into the following categories:
- * ``data`` – vehicles.csv data file from UCI Machine Learning repository used in the notebooks.
+ * ``data`` – vehicles.csv data file from Kaggle Machine Learning dataset repository used in the notebooks
  * ``images`` – Image files used in Notebook and Project Description
- * ``notebook`` – What Drives the Price of a Car Notebook .
+ * ``notebook`` – What Drives the Price of a Car Notebook
 
 
 ## Business Understanding
 
-The business objective is to identify key features for used car prices based on the dataset provided so that Car Dealers and Sales People can use these key features to understand the cars that they need to have in their inventory to increase sales.
+The business objective is to identify key features for used car prices based on the dataset provided so that Car Dealers and their Sales Team can use these key features to understand the cars that they need to have in their inventory to increase sales.
 
-For this application, we used a machine learning process which starts with gathering the data, cleaning, preparing and manipulating the data, training the model then testing to get predicted values and measure model accuracy. As part of the life cycle, additional data from sales should be used on an on-going bases to “improve” the model which leads to higher prediction accuracy on the factors that  consumers are looking for in a used car. 
+For this application, we used a machine learning process which starts with gathering the data, cleaning, preparing and manipulating the data, training the model then testing to get predicted values and measure model accuracy. As part of the life cycle, additional data from sales should be used on an on-going bases to “improve” the model which leads to higher prediction accuracy on the factors that  consumers are looking for in used cars. 
 
 ![Machine Learning Overview!](./images/Machine-Learning-Process-Overview.jpeg)
 
@@ -49,7 +49,7 @@ As you can see from the Diagram above, there are car prices with zero value for 
 ## Data Preparation
 
 Summary of the Data Preparation is as follows:
-- Remove records with Zero Prices
+- Remove records with Zero Prices and Odometer values
 - Remove records where some of the factors are not populated
 - Drop a number of factors (i.e., VIN, id, region etc.) that are not significant in user car price determination
 - Review and remove the other factors (i.e., state, paint color, manufacturer, transmission etc.) and check if they have an impact on car price based on the provided data
@@ -96,8 +96,11 @@ In testing these models with the inputs, we observed the following for used car 
 | Model4      	| Car with Odometer of 100000                                                          	| 11,838.40                    	|
 |             	|                                                                                      	|                              	|
 
+As you can see, the Machine Learning application "Model" built using all the final dataset from the data manipulation phase which included features like Odometer, Year, Condition, fuel type, drive train and size returns a negative value (i.e., -$98,263.87) which is not realistic for a "new car with 100 miles, condition excellent and new with diesel and four wheel drive".
 
-For Model6 and Model7 which are the recommended/selected models, see below for the prediction testing results:
+Same Model returned $29,013.33 for new car with 100 miles, condition good and with Electric and front wheel drive.
+
+For ML Applications ``Model6`` and ``Model7`` which are the recommended/selected models, see below for the prediction testing results:
 
 | Test Description                                                         	| Predicted Used Car Price Model6	| Predicted Used Car Price Model7 ($)	|
 |:--------------------------------------------------------------------------	|:-------------------------------:	|:-------------------------------:	|
@@ -107,16 +110,16 @@ For Model6 and Model7 which are the recommended/selected models, see below for t
 | Car with Year of 2020, 10k Miles with No Diesel Fuel, 4WD and Full Size  	| 31,089.55                      	| 31,700.49                      	|
 |                                                                          	|                                 	|                                 	|
 
-With regards to high quality model based on the dataset provided, Model6 and Model7 are the recommended models.
+With regards to high quality model based on the dataset provided, ``Model6`` and ``Model7`` are the recommended models.
 
 When we analyze the importance of feature selection based on the trained model, we observe the following order
-- **Model6** - Diesel Fuel, Odometer, Four Wheel Drive, Full Size and Year
-- **Model7** - Diesel Fuel, Year, Odometer, Four Wheel Drive and Full Size
+- ``Model6`` - Diesel Fuel, Odometer, Four Wheel Drive, Full Size and Year
+- ``Model7`` - Diesel Fuel, Year, Odometer, Four Wheel Drive and Full Size
 
 
 ## Next Steps and Recommendations
 
-As the data provided is not that clean with null, NAN, zero and unrealistic values, further filering of the data could be done, for example, selecting used car records with year => 2000. 
+As the data provided is not that clean with null, NAN, zero, missing and unrealistic values, further filering of the data could be done, for example, selecting used car records with year => 2000. 
 
 ![Histogram Plot of Used Cars by Year > 2000!](./images/Histogram-Plot-of-Used-Cars-by-Year-greater-than-2000.png)
 
@@ -128,17 +131,17 @@ Additional Data on used car datasets can be downloaded from [Kaggle Used Cars Da
 
 We would recommend some form of classification/categories for features like paint_color, state etc so that we can include them with fewer permutations in the model.
 
-From the current models created, **Model6** and **Model7** would be the recommended models to use.  
+From the current models created, ``Model6`` and ``Model7`` would be the recommended models to use.  
 
 These models were built with the following logic:
-- **Model6** - Odometer and Price greater than 5000, Odometer, Year, fuel_diesel, drive_4wd  and size_full-size as the only inputs
-- **Model7** - Odometer and Price greater than 5000, Odometer, Year > 1990, Year, fuel_diesel,  drive_4wd and size_full-size as the only inputs
+- ``Model6`` - Odometer and Price greater than 5000, Odometer, Year, fuel_diesel, drive_4wd  and size_full-size as the only inputs
+- ``Model7`` - Odometer and Price greater than 5000, Odometer, Year > 1990, Year, fuel_diesel,  drive_4wd and size_full-size as the only inputs
 
 These models  provided the following model feature selection:
-- **Model6** - Diesel Fuel, Odometer, Four Wheel Drive, Full Size and Year
-- **Model7** - Diesel Fuel, Year, Odometer, Four Wheel Drive and Full Size
+- ``Model6`` - Diesel Fuel, Odometer, Four Wheel Drive, Full Size and Year
+- ``Model7`` - Diesel Fuel, Year, Odometer, Four Wheel Drive and Full Size
 
-For Next Steps, while the recommended models (i.e., **Model7** etc.) can be deployed, we would also recommend gathering more quality data that would produce a model with an accuracy of 75%+ based on used cars data no more than 10-15 years old.
+For Next Steps, while the recommended models (i.e., ``Model7`` etc.) can be deployed, we would also recommend gathering more quality data that would produce a model with an accuracy of 75%+ based on used cars data no more than 10-15 years old.
 
 ## License
 
