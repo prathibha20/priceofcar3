@@ -28,7 +28,7 @@ The notebooks are grouped into the following categories:
 
 
 ## Business Understanding
-
+The business objective is to identify key features for used car prices based on the dataset provided so that Car Dealers and Sales People can use these key features to understand the cars that they need to have in their inventory to increase sales.
 
 ## Data Understanding
 
