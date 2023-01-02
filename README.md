@@ -59,7 +59,7 @@ Summary of the Data Preparation is as follows:
 
 ## Regression Models
 
-We ran a number of models using the full set of features after data manipulation, using a subset of features based on the correlation matrix between the features and used car prices.
+We ran a number of models (7 to be exact) to create 7 ML Models or AI Applications using the full set of features after data manipulation and a subset of features based on the correlation matrix between the features and used car prices. Additional filtering (i.e., Price and Odometer > 5000 and Year > 1990) were also used to create datasets used from some of the models below.
 
 For Most of these Models, the accuracy was less than 50% with the exception of the last 2 models. See table below:
 
